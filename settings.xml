@@ -6,7 +6,6 @@
     <server>
       <id>maven_repo</id>
       <username>igeadetokunbo0133</username>
-      <password></password>
     </server>
   </servers>
 </settings>
