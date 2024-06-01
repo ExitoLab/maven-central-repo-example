@@ -15,21 +15,14 @@ steps:
 - script: chmod +x ./mvnw
   displayName: 'Set executable permission for mvnw'
 
-- task: DownloadSecureFile@1
-  displayName: 'Download settings.xml'
-  inputs:
-    secureFile: 'settings.xml'
-
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
     goals: 'clean install'
-    options: '-B'
-    mavenOptions: '-s settings.xml'
+    options: '-B -s settings.xml'
 
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
     goals: 'deploy'
-    options: '-B'
-    mavenOptions: '-s settings.xml'
+    options: '-B -s settings.xml'
