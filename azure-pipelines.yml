@@ -21,8 +21,8 @@ steps:
     goals: 'clean install'
     options: '-B -s settings.xml'
 
-- task: Maven@3
-  inputs:
-    mavenPomFile: 'pom.xml'
-    goals: 'deploy'
-    options: '-B -s settings.xml'
+# - task: Maven@3
+#   inputs:
+#     mavenPomFile: 'pom.xml'
+#     goals: 'deploy'
+#     options: '-B -s settings.xml'
