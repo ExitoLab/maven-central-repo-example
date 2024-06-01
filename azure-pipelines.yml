@@ -21,8 +21,15 @@ steps:
     goals: 'clean install'
     options: '-B -s settings.xml'
 
-# - task: Maven@3
-#   inputs:
-#     mavenPomFile: 'pom.xml'
-#     goals: 'deploy'
-#     options: '-B -s settings.xml'
+- task: Maven@3
+  inputs:
+    mavenPomFile: 'pom.xml'
+    mavenOptions: '-Xmx3072m'
+    javaHomeOption: 'JDKVersion'
+    options: '-B -s settings.xml'
+    jdkVersionOption: '1.8'
+    jdkArchitectureOption: 'x64'
+    mavenAuthenticateFeed: true
+    publishJUnitResults: false
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    goals: 'deploy'

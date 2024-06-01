@@ -26,6 +26,12 @@
         <repository>
             <id>azure-artifacts</id>
             <url>https://pkgs.dev.azure.com/igeadetokunbo0133/_packaging/maven_repo/maven/v1</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
         </repository>
     </repositories>
 
