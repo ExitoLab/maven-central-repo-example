@@ -1,0 +1,19 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  MAVEN_OPTS: '-Dmaven.repo.local=$(Pipeline.Workspace)/.m2/repository'
+
+steps:
+- task: MavenAuthenticate@0
+  inputs:
+    artifactsFeeds: 'YOUR-FEED'
+
+- script: ./mvnw -B clean install
+  displayName: 'Build with Maven'
+  
+- script: ./mvnw deploy
+  displayName: 'Deploy to Azure Artifacts'
