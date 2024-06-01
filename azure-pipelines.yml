@@ -10,10 +10,19 @@ variables:
 steps:
 - task: MavenAuthenticate@0
   inputs:
-    artifactsFeeds: 'YOUR-FEED'
+    artifactsFeeds: 'https://pkgs.dev.azure.com/igeadetokunbo0133/_packaging/maven_repo/maven/v1'
 
-- script: ./mvnw -B clean install
-  displayName: 'Build with Maven'
-  
-- script: ./mvnw deploy
-  displayName: 'Deploy to Azure Artifacts'
+- script: chmod +x ./mvnw
+  displayName: 'Set executable permission for mvnw'
+
+- task: Maven@3
+  inputs:
+    mavenPomFile: 'pom.xml'
+    goals: 'clean install'
+    options: '-B'
+
+- task: Maven@3
+  inputs:
+    mavenPomFile: 'pom.xml'
+    goals: 'deploy'
+    options: '-B'
