@@ -35,6 +35,17 @@
             <url>https://pkgs.dev.azure.com/igeadetokunbo0133/_packaging/maven_repo/maven/v1</url>
         </pluginRepository>
     </pluginRepositories>
+
+    <distributionManagement>
+        <repository>
+            <id>azure-artifacts</id>
+            <url>https://pkgs.dev.azure.com/igeadetokunbo0133/_packaging/maven_repo/maven/v1</url>
+        </repository>
+        <snapshotRepository>
+            <id>azure-artifacts-snapshots</id>
+            <url>https://pkgs.dev.azure.com/igeadetokunbo0133/_packaging/maven_repo/maven/v1</url>
+        </snapshotRepository>
+    </distributionManagement>
     
     <build>
         <plugins>
